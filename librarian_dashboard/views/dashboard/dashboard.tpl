@@ -1,5 +1,4 @@
 <%inherit file="/base.tpl"/>
-<%namespace file="_dashboard_section.tpl" name="section"/>
 
 <%block name="title">
 ## Translators, used as page title
@@ -8,9 +7,7 @@ ${_('Dashboard')}
 
 <div class="dashboard-sections accordion">
     % for plugin in plugins:
-        <%section:plugin name="${plugin.get_name()}" heading="${plugin.get_heading()}", extra_classes="${plugin.get_formatted_classes()}">
-            ${plugin.render()}
-        </%section:plugin>
+    ${plugin.render()}
     % endfor
 </div>
 
