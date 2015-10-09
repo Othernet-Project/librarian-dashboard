@@ -9,7 +9,7 @@ ${_('Dashboard')}
 <div class="dashboard-sections accordion">
     % for plugin in plugins:
         <%section:plugin name="${plugin.get_name()}" heading="${plugin.get_heading()}", extra_classes="${plugin.get_formatted_classes()}">
-            ${plugin.render()}
+            ${plugin.render(**context.kwargs)}
         </%section:plugin>
     % endfor
 </div>
