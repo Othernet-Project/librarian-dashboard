@@ -44,7 +44,9 @@ class DashboardPlugin(object):
     name = None
     template_lookup_base = os.path.dirname(__file__)
     classes = ['collapsible', 'collapsed']
-    plugin_error_template = 'plugin_error.tpl'
+    plugin_error_template = 'dashboard/plugin_error.tpl'
+    priority=1
+
 
     def get_name(self):
         """ Return section name """
@@ -76,15 +78,12 @@ class DashboardPlugin(object):
     def get_formatted_classes(self):
         return ' '.join([('dash-%s' % c) for c in self.get_classes()])
 
-    def render(self):
+    def render(self, **context):
         """ Render dashboard section """
         name = self.get_name()
-        context = {
+        context.update({
             'plugin': self,
-            'name': name,
-            'heading': self.get_heading(),
-            'classes': self.get_formatted_classes(),
-        }
+        })
         try:
             context.update(self.get_context())
             return template(self.get_template(), **context)

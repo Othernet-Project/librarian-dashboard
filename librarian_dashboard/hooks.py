@@ -8,5 +8,4 @@ def initialize(supervisor):
 
 
 def init_complete(supervisor):
-    plugin_list = supervisor.config['dashboard.plugins']
-    supervisor.exts.dashboard.sort(plugin_list)
+    supervisor.exts.dashboard.sort()

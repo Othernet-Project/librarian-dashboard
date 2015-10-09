@@ -20,20 +20,11 @@ class DashboardPluginRegistry(object):
     def register(self, plugin_cls):
         self.collected[plugin_cls.name] = plugin_cls
 
-    def sort(self, by_names):
+    def sort(self):
         # Install dashboard plugins for plugins that have them
-        logging.debug("Installing dashboard plugins: %s", ', '.join(by_names))
-        for name in by_names:
-            if name not in self.collected:
-                logging.debug("Plugin '%s' is not installed, ignoring", name)
-                continue
-            plugin_cls = self.collected[name]
-            try:
-                self.installed.append(plugin_cls())
-                logging.info('Installed dashboard plugin %s', name)
-            except AttributeError:
-                logging.debug("No dashboard plugin for '%s'", name)
-                continue
+        self.installed = [i[1]() for i in sorted(self.collected.items(),
+                                               key=lambda c: c[1].priority,
+                                               reverse=True)]
 
     @property
     def plugins(self):
