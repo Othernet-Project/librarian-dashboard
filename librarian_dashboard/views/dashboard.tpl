@@ -6,7 +6,7 @@
 ${_('Dashboard')}
 </%block>
 
-<div class="dashboard-sections accordion">
+<div class="dashboard-sections o-collapsible" id="dashboard-sections">
     % for plugin in plugins:
         <%section:plugin name="${plugin.get_name()}" heading="${plugin.get_heading()}", extra_classes="${plugin.get_formatted_classes()}">
             ${plugin.render(**context.kwargs)}

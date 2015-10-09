@@ -43,7 +43,7 @@ class DashboardPlugin(object):
     heading = None
     name = None
     template_lookup_base = os.path.dirname(__file__)
-    classes = ['collapsible', 'collapsed']
+    classes = []
     plugin_error_template = 'dashboard/plugin_error.tpl'
     priority=1
 
