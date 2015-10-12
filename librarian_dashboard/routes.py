@@ -15,7 +15,7 @@ from librarian_core.contrib.templates.renderer import view
 
 
 @login_required()
-@view('dashboard')
+@view('dashboard/dashboard')
 def dashboard():
     """ Render the dashboard """
     return dict(plugins=request.app.supervisor.exts.dashboard.plugins)

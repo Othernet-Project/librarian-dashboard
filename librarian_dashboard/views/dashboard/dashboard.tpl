@@ -1,13 +1,17 @@
 <%inherit file="/base.tpl"/>
+<%namespace file="_dashboard_section.tpl" name="section"/>
 
 <%block name="title">
 ## Translators, used as page title
 ${_('Dashboard')}
 </%block>
 
-<div class="dashboard-sections accordion">
+<div class="dashboard-sections o-collapsible" id="dashboard-sections">
     % for plugin in plugins:
-    ${plugin.render()}
+        <% taborder = loop.index + 1 %>
+        <%section:plugin name="${plugin.get_name()}" heading="${plugin.get_heading()}", extra_classes="${plugin.get_formatted_classes()}" taborder="${taborder}">
+            ${plugin.render(**context.kwargs)}
+        </%section:plugin>
     % endfor
 </div>
 
