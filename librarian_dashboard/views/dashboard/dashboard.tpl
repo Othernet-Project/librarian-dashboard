@@ -3,7 +3,7 @@
 
 <%block name="title">
 ## Translators, used as page title
-${_('Dashboard')}
+${_('Settings')}
 </%block>
 
 <div class="dashboard-sections o-collapsible" id="dashboard-sections">
