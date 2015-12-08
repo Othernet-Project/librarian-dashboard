@@ -20,20 +20,6 @@ To enable this component, add it to the list of components in librarian_'s
     +components =
         librarian_dashboard
 
-Configuration
--------------
-
-``dashboard.plugins``
-    List of dashboard plugin names (the name is specified when subclassing the
-    base ``DashboardPlugin`` class as it's attribute), used to specify the order
-    of their appearance. Example::
-
-        [dashboard]
-        plugins =
-            first
-            second
-            third
-
 Development
 -----------
 
