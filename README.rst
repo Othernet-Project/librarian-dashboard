@@ -9,9 +9,9 @@ Installation
 
 The component has the following dependencies:
 
-- librarian_core_
-- librarian_menu_
-- librarian_auth_
+- librarian-core_
+- librarian-menu_
+- librarian-auth_
 
 To enable this component, add it to the list of components in librarian_'s
 `config.ini` file, e.g.::
@@ -34,8 +34,8 @@ use::
     make watch
 
 .. _librarian: https://github.com/Outernet-Project/librarian
-.. _librarian_core: https://github.com/Outernet-Project/librarian-core
-.. _librarian_menu: https://github.com/Outernet-Project/librarian-menu
-.. _librarian_auth: https://github.com/Outernet-Project/librarian-auth
+.. _librarian-core: https://github.com/Outernet-Project/librarian-core
+.. _librarian-menu: https://github.com/Outernet-Project/librarian-menu
+.. _librarian-auth: https://github.com/Outernet-Project/librarian-auth
 .. _compass: http://compass-style.org/
 .. _coffeescript: http://coffeescript.org/
